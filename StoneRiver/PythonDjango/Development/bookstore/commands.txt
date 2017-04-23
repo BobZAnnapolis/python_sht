@@ -1,0 +1,61 @@
+  895  cd..
+  896  cd Environments/
+  897  lsa
+  899  virtualenv --python=/usr/local/bin/python2_7 py2_7
+  918  virtualenv-3.4 --python=/usr/local/bin/python3.5 py3_5
+
+ 1009  cd py2_7/
+ 1044  source bin/activate
+ 1060  cd StoneRiver/
+ 1062  cd PythonDjango/
+ 1064  mkdir Development
+ 1066  cd Development/
+ 1068  django-admin startproject bookstore
+ 1070  cd bookstore/
+ 1102  pip install django
+ 1103  which python
+ 1104  ./manage.py migrate
+ 1111  lsa
+ 1112  ./manage.py runserver
+ 1113  ./manage.py migrate
+ 1114  ./manage.py runserver
+ 1115  git status
+ 1117  cd..
+ 1118  pip freeze > requirements.txt
+ 1120  cat requirements.txt 
+ 1121  cd Development/bookstore/
+ 1124  cd..
+ 1126  vi .gitignore 
+ 1128  cd Development/
+ 1130  cd bookstore/
+ 1132  mv ../../.gitignore .
+ 1134  cd..
+ 1136  git add . && git commit -am "added .gitignore" && git push
+ 1139  cd PythonDjango/
+ 1141  cd Development/
+ 1143  cd bookstore/
+ 1145  git status
+ 1147  ./manage.py startapp store
+ 1149  git status
+ 1150  git add store
+ 1151  git status
+ 1153  cd store/
+ 1155  mkdir templates
+ 1156  cd templates/
+ 1158  cd..
+ 1159  ./manage.py runserver
+ 1161  git commit -am "add store app view templates and urls"
+ 1162  git push
+ 1164  git add .
+ 1165  git commit -am "thought i added these inprevious commit but status said otherwise, adding now"
+ 1166  git push
+ 1169  ./manage.py makemigrations store
+ 1170  ./manage.py sqlmigrate store 0001
+ 1171  ./manage.py migrate
+ 1172  ./manage.py createsuperuser
+ 1173  ./manage.py runserver
+ 1174  ./manage.py makemigrations
+ 1175  ./manage.py migrate
+ 1176  ./manage.py runserver
+ 1180  git add . && git commit -am "added book model, book admin class, changed store template" && git push
+1182  history >commands.txt
